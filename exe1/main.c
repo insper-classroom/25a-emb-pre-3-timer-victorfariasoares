@@ -7,8 +7,7 @@ const int LED_PIN_R = 4;
 
 volatile int g_timer_0 = 0;
 volatile int flag_f_r = 0;
-volatile int timer_rodando = 0;
-repeating_timer_t timer_0;
+
 
 
 void btn_callback(uint gpio, uint32_t events) {
@@ -37,6 +36,8 @@ int main() {
                                        &btn_callback);
     
     int timer_0_hz = 2;
+    int timer_rodando = 0;
+    repeating_timer_t timer_0;
 
     while (true) {
 
