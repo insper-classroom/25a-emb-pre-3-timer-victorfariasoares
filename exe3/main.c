@@ -12,13 +12,14 @@ absolute_time_t press_time;
 
 void btn_callback(uint gpio, uint32_t events) {
     if (events == 0x4) { // fall edge
-        if (gpio == BTN_PIN_R)
+        if (gpio == BTN_PIN_R){
             btn_apertado = 1;
             press_time = get_absolute_time();
-
+        }
     } else if (events == 0x8) { // rise edge
-        if (gpio == BTN_PIN_R)
-            btn_solto = 0;
+        if (gpio == BTN_PIN_R){
+            btn_solto = 1;
+        }
     }
 }
 
