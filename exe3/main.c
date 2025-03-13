@@ -8,7 +8,7 @@ const int LED_PIN_R = 4;
 volatile int btn_apertado = 0;
 volatile int btn_solto = 0;
 
-absolute_time_t press_time;
+volatile absolute_time_t press_time;
 
 void btn_callback(uint gpio, uint32_t events) {
     if (events == 0x4) { // fall edge
